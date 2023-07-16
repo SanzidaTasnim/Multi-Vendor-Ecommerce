@@ -20,13 +20,17 @@ class VendorController extends Controller
     }
     public function vendorLogout(Request $request)
     {
+        $notification = array(
+            "message" => "Vendor Profile Logout Successfully",
+            "alert-type" => "success",
+        );
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
 
-        return redirect('vendor/login');
+        return redirect('vendor/login')->with($notification);
     }
     public function vendorProfile()
     {
