@@ -23,6 +23,8 @@
 	<link rel="stylesheet" href="{{asset('adminBackend/assets/css/dark-theme.css')}}" />
 	<link rel="stylesheet" href="{{asset('adminBackend/assets/css/semi-dark.css')}}" />
 	<link rel="stylesheet" href="{{asset('adminBackend/assets/css/header-colors.css')}}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="{{asset('adminBackend/assets/plugins/datatable/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 	<title>Admin Dashboard</title>
 </head>
@@ -169,6 +171,13 @@
 	  <script src="{{asset('adminBackend/assets/js/index.js')}}"></script>
 	<!--app JS-->
 	<script src="{{asset('adminBackend/assets/js/app.js')}}"></script>
+    <script src="{{asset('adminBackend/assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('adminBackend/assets/plugins/datatable/js/dataTables.bootstrap5.min.js')}}"></script>
+	<script>
+		$(document).ready(function() {
+			$('#example').DataTable();
+		  } );
+	</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script>
         @if(Session::has('message'))

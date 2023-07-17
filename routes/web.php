@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\backend\BrandController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\vendor\VendorController;
@@ -55,5 +56,9 @@ Route::middleware(['auth', 'role:vendor'])->group(function() {
 Route::get('admin/login', [AdminController::class, 'adminLogin']);
 Route::get('vendor/login', [VendorController::class, 'vendorLogin']);
 
-
+Route::middleware(['auth','role:admin'])->group(function() {
+    Route::controller(BrandController::class)->group(function () {
+        Route::get('brand/all', 'allBrand')->name('all.brands');
+    });
+});
 require __DIR__.'/auth.php';
