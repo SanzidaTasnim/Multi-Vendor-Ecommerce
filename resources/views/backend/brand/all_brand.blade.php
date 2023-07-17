@@ -15,7 +15,7 @@
             </div>
             <div class="ms-auto">
                 <div class="btn-group">
-                    <a type="button" class="btn btn-primary">
+                    <a type="button" class="btn btn-primary" href="{{route('add.brands')}}">
                         <i class="lni lni-circle-plus"></i>
                         Add New
                     </a>
@@ -32,7 +32,6 @@
                                 <th>Sl No.</th>
                                 <th>Brand Name</th>
                                 <th>Brand Image</th>
-                                <th>Created At</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -42,9 +41,9 @@
                                     <td>{{ $key + 1 }}</td>
                                     <td>{{ $item->brand_name }}</td>
                                     <td>
-                                        <img src="{{'$item->brand_image'}}" alt="" style="width: 70px;height: 40px;">
+                                        <img src="{{asset($item->brand_img)}}" alt="" style="width: 70px;height: 40px;">
                                     </td>
-                                    <td>{{ $item->created_at->isoFormat('YYYY-MM-DD') }}</td>
+
                                     <td>
                                         <a href="" class="btn btn-info btn-sm">Edit</a>
                                         <a href="" class="btn btn-danger btn-sm">Delete</a>
@@ -57,7 +56,6 @@
                                 <th>Sl No.</th>
                                 <th>Brand Name</th>
                                 <th>Brand Image</th>
-                                <th>Created At</th>
                                 <th>Action</th>
                             </tr>
                         </tfoot>

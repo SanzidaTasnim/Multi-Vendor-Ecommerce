@@ -32,7 +32,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="dashboard-eCommerce.html">
+                    <a href="{{route('add.brands')}}">
                         <i class="bx bx-right-arrow-alt"></i>
                         Add Brands
                     </a>

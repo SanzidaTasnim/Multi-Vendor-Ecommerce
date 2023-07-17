@@ -59,6 +59,8 @@ Route::get('vendor/login', [VendorController::class, 'vendorLogin']);
 Route::middleware(['auth','role:admin'])->group(function() {
     Route::controller(BrandController::class)->group(function () {
         Route::get('brand/all', 'allBrand')->name('all.brands');
+        Route::get('brand/add', 'addBrand')->name('add.brands');
+        Route::post('brand/store', 'storeBrand')->name('store.brand');
     });
 });
 require __DIR__.'/auth.php';
